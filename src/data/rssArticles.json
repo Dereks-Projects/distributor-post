@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Global Wine Trends for 2025",
+    "description": "Export growth slows, but premium wine segments are surging in Europe and Asia.",
+    "url": "https://example.com/wine-trends-2025",
+    "image": "https://example.com/images/wine.jpg",
+    "source": { "name": "Wine Spectator" },
+    "publishedAt": "2025-05-21T09:00:00Z"
+  },
+  {
+    "title": "Distilleries Turn to Sustainable Practices",
+    "description": "Spirits producers shift to eco-friendly production in response to consumer demand.",
+    "url": "https://example.com/sustainable-distilling",
+    "image": "https://example.com/images/spirits.jpg",
+    "source": { "name": "Distiller.com" },
+    "publishedAt": "2025-05-20T15:30:00Z"
+  }
+]

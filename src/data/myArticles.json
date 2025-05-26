@@ -1,0 +1,26 @@
+[
+  {
+    "title": "The Return of Hospitality",
+    "description": "How post-pandemic travel and dining habits are reshaping restaurants and hotels.",
+    "url": "/articles/the-return-of-hospitality",
+    "image": "https://via.placeholder.com/600x300.png?text=Hospitality",
+    "source": { "name": "Original Content" },
+    "publishedAt": "2025-05-01T12:00:00Z"
+  },
+  {
+    "title": "Tequila, Mezcal, and the American Bar",
+    "description": "An in-depth look at how agave spirits have moved from niche to mainstream.",
+    "url": "/articles/agave-rise",
+    "image": "https://via.placeholder.com/600x300.png?text=Agave+Spirits",
+    "source": { "name": "Original Content" },
+    "publishedAt": "2025-05-05T08:30:00Z"
+  },
+  {
+    "title": "Why English Sparkling Wine Matters",
+    "description": "A surprising trend in premium sparkling wine production—here’s how it’s making an impact.",
+    "url": "/articles/english-sparkling-wine",
+    "image": "https://via.placeholder.com/600x300.png?text=English+Sparkling",
+    "source": { "name": "Original Content" },
+    "publishedAt": "2025-05-10T10:45:00Z"
+  }
+]
