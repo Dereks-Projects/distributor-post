@@ -8,6 +8,11 @@ function App() {
   const [vinepairArticles, setVinepairArticles] = useState([]);
   const [substackArticles, setSubstackArticles] = useState([]);
   const [educationArticles, setEducationArticles] = useState([]);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
 
   function decodeHtmlEntities(text) {
     const textarea = document.createElement("textarea");
@@ -147,11 +152,28 @@ function App() {
 
   return (
     <div className="app-container">
+      {/* Mobile Header */}
+      <header className="mobile-header">
+        <span className="hamburger" onClick={toggleMenu}>☰</span>
+        <span className="mobile-title">Distributor Post</span>
+        <span className="search-icon">🔍</span>
+      </header>
+      {menuOpen && (
+        <nav className="mobile-nav">
+          <a href="#original">Industry Analysis</a>
+          <a href="#trending">Trending Headlines</a>
+          <a href="#industry">Industry Sources</a>
+          <a href="#education">Wine Education</a>
+        </nav>
+      )}
+
+      {/* Main Header */}
       <header className="site-header">
         <h1 className="site-title">Distributor Post</h1>
         <p className="site-subtitle">The #1 resource for beverage industry professionals.</p>
       </header>
 
+      {/* Desktop Nav */}
       <nav className="site-nav">
         <a href="#original">Industry Analysis</a>
         <a href="#trending">Trending Headlines</a>

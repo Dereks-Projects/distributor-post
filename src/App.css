@@ -10,7 +10,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Reset and layout base */
 body {
   margin: 0;
   padding: 0;
@@ -22,14 +21,12 @@ body {
   background-color: #fafafa;
 }
 
-/* App wrapper */
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
 
-/* Typography */
 h1, h2 {
   text-align: center;
   color: #222;
@@ -48,7 +45,6 @@ section h2 {
   text-align: left;
 }
 
-/* Link styles */
 a {
   font-weight: 500;
   color: #2a72de;
@@ -60,7 +56,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Buttons (if used later) */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -83,7 +78,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Header */
+/* ----- DESKTOP HEADER & NAVIGATION ----- */
 .site-header {
   background-color: transparent;
   color: #000;
@@ -105,26 +100,92 @@ button:focus-visible {
   color: rgb(37, 37, 37);
 }
 
-/* Navigation */
 .site-nav {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  flex-wrap: wrap;
   margin: 2rem 0;
 }
 
-.site-nav a {
+.site-nav .nav-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.site-nav .nav-links a {
   color: #174eb6;
   text-decoration: none;
   font-weight: 500;
+  padding: 0.5rem 1rem;
 }
 
-.site-nav a:hover {
+.site-nav .nav-links a:hover {
   text-decoration: underline;
 }
 
-/* Featured Article */
+/* ----- MOBILE HEADER BAR ----- */
+.mobile-header {
+  display: none;
+  background-color: #000;
+  color: white;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mobile-header .hamburger,
+.mobile-header .search-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobile-header .mobile-title {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+
+/* ----- TOGGLED MOBILE NAV LINKS ----- */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background-color: #111;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.mobile-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-nav a:hover {
+  color: #00aaff;
+}
+
+@media (max-width: 768px) {
+  .mobile-header {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+
+  .site-header,
+  .site-nav {
+    display: none;
+  }
+}
+
+/* ----- ARTICLE STYLES ----- */
 .featured-container {
   margin-bottom: 1.5rem;
 }
@@ -136,7 +197,6 @@ button:focus-visible {
   border-radius: 8px;
 }
 
-/* Article Grid */
 .article-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -149,7 +209,7 @@ button:focus-visible {
   margin-bottom: 0.75rem;
 }
 
-/* quiz */
+/* ----- QUIZ STYLES ----- */
 .quiz-wrapper {
   display: flex;
   justify-content: center;
@@ -174,19 +234,17 @@ button:focus-visible {
 .quiz-controls {
   display: flex;
   align-items: center;
-  justify-content: center; /* 👈 center the whole row horizontally */
+  justify-content: center;
   gap: 12px;
   margin-bottom: 1rem;
-  flex-wrap: wrap; /* allows wrapping on small screens */
+  flex-wrap: wrap;
   text-align: center;
 }
 
-
-
 .answer-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columns */
-  gap: 12px; /* space between buttons */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
   margin: 1rem 0;
 }
 
@@ -196,9 +254,7 @@ button:focus-visible {
   cursor: pointer;
 }
 
-
-
-/* Footer */
+/* ----- FOOTER ----- */
 .site-footer {
   background-color: #cacaca;
   color: rgb(0, 0, 0);
