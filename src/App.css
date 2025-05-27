@@ -131,7 +131,7 @@ button:focus-visible {
 
 .featured-container .article-card {
   background: #fff;
-  padding: 1.5rem;
+  padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   border-radius: 8px;
 }
@@ -148,6 +148,55 @@ button:focus-visible {
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
 }
+
+/* quiz */
+.quiz-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: .5rem;
+}
+
+.quiz-container {
+  background: #ffffff;
+  padding: 1rem;
+  padding-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.quiz-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 👈 center the whole row horizontally */
+  gap: 12px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  text-align: center;
+}
+
+
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 12px; /* space between buttons */
+  margin: 1rem 0;
+}
+
+.answer-grid button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
 
 /* Footer */
 .site-footer {

@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import ArticleCard from './components/ArticleCard';
 import './App.css';
+import WineQuiz from './components/WineQuiz';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -8,14 +9,12 @@ function App() {
   const [substackArticles, setSubstackArticles] = useState([]);
   const [educationArticles, setEducationArticles] = useState([]);
 
-  // Helper to decode HTML entities
   function decodeHtmlEntities(text) {
     const textarea = document.createElement("textarea");
     textarea.innerHTML = text;
     return textarea.value;
   }
 
-  // Helper to extract first <img> src from HTML
   function extractImageFromDescription(html) {
     const div = document.createElement("div");
     div.innerHTML = html;
@@ -163,7 +162,25 @@ function App() {
       {renderSection("original", "In Depth Analysis", substackArticles)}
       {renderSection("trending", "Trending Headlines", articles)}
       {renderSection("industry", "From Industry Sources", vinepairArticles)}
-      {renderSection("education", "Wine Education", educationArticles)}
+
+      <section>
+        <h2 id="education">Wine Education</h2>
+        {educationArticles.length > 0 && (
+          <>
+            <div className="featured-container">
+              <ArticleCard {...educationArticles[0]} />
+            </div>
+            <div className="article-grid">
+              {educationArticles.slice(1, 4).map((article, index) => (
+                <ArticleCard key={`education-${index}`} {...article} />
+              ))}
+            </div>
+          </>
+        )}
+        <div className="quiz-wrapper">
+          <WineQuiz />
+        </div>
+      </section>
 
       <footer className="site-footer">
         <p className="footer-tagline">Insight for Beverage Professionals</p>
