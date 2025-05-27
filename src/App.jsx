@@ -5,7 +5,6 @@ import './App.css';
 function App() {
   const [articles, setArticles] = useState([]);
   const [vinepairArticles, setVinepairArticles] = useState([]);
-  const [beverageDailyArticles, setBeverageDailyArticles] = useState([]);
   const [substackArticles, setSubstackArticles] = useState([]);
   const [educationArticles, setEducationArticles] = useState([]);
 
@@ -57,10 +56,7 @@ function App() {
     const fetchRSS = async () => {
       try {
         const vinepair = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://vinepair.com/feed/');
-        const beverageDaily = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://www.beveragedaily.com/rss');
-
         const vineData = await vinepair.json();
-        const bevData = await beverageDaily.json();
 
         const vineItems = (vineData.items || []).slice(0, 4).map(item => ({
           title: decodeHtmlEntities(item.title),
@@ -71,19 +67,9 @@ function App() {
           publishedAt: item.pubDate,
         }));
 
-        const bevItems = (bevData.items || []).slice(0, 4).map(item => ({
-          title: decodeHtmlEntities(item.title),
-          description: decodeHtmlEntities(item.description),
-          url: item.link,
-          image: item.thumbnail || 'https://placehold.co/600x300?text=BeverageDaily',
-          source: { name: 'BeverageDaily' },
-          publishedAt: item.pubDate,
-        }));
-
         setVinepairArticles(vineItems);
-        setBeverageDailyArticles(bevItems);
       } catch (error) {
-        console.error('Error fetching RSS feeds:', error);
+        console.error('Error fetching RSS feed:', error);
       }
     };
     fetchRSS();
@@ -129,7 +115,7 @@ function App() {
             title: decodeHtmlEntities(item.title),
             description: item.description,
             url: item.link,
-            image: item.thumbnail || 'https://placehold.co/600x300?text=Education',
+            image: item.thumbnail || extractImageFromDescription(item.description) || undefined,
             source: { name: 'Derek Engles (Substack)' },
             publishedAt: item.pubDate,
           }));
@@ -176,7 +162,7 @@ function App() {
 
       {renderSection("original", "In Depth Analysis", substackArticles)}
       {renderSection("trending", "Trending Headlines", articles)}
-      {renderSection("industry", "From Industry Sources", [...vinepairArticles, ...beverageDailyArticles])}
+      {renderSection("industry", "From Industry Sources", vinepairArticles)}
       {renderSection("education", "Wine Education", educationArticles)}
 
       <footer className="site-footer">
@@ -185,7 +171,7 @@ function App() {
         <div className="footer-links">
           <a href="https://www.linkedin.com/company/distributorpost" target="_blank" rel="noopener noreferrer">LinkedIn</a>
           <a href="mailto:derek@somm.site">Contact Us</a>
-          <a href="https://distributorpost.substack.com/" target="_blank" rel="noopener noreferrer">More Education</a>
+          <a href="https://www.somm.site" target="_blank" rel="noopener noreferrer">Learn More</a>
         </div>
       </footer>
     </div>

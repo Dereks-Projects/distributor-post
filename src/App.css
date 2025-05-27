@@ -1,16 +1,86 @@
-/* General Reset */
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #fafafa;
-  color: #222;
-  line-height: 1.6;
+:root {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #333;
+  background-color: #f8f9fa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Reset and layout base */
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #fafafa;
+}
+
+/* App wrapper */
 .app-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem 2rem 1rem;
+  padding: 2rem 1rem;
+}
+
+/* Typography */
+h1, h2 {
+  text-align: center;
+  color: #222;
+}
+
+h1 {
+  margin: 2rem 0 0.5rem;
+  font-size: 2.5rem;
+}
+
+section h2 {
+  font-size: 1.1rem;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.5rem;
+  margin: 2rem 0 1rem;
+  text-align: left;
+}
+
+/* Link styles */
+a {
+  font-weight: 500;
+  color: #2a72de;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #174eb6;
+  text-decoration: underline;
+}
+
+/* Buttons (if used later) */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
 /* Header */
@@ -32,7 +102,7 @@ body {
   margin: 0.5rem 0 0;
   font-size: 1.1rem;
   font-weight: 400;
-  color: rgb(37, 37, 37)
+  color: rgb(37, 37, 37);
 }
 
 /* Navigation */
@@ -45,23 +115,13 @@ body {
 }
 
 .site-nav a {
-  color: #333;
+  color: #174eb6;
   text-decoration: none;
   font-weight: 500;
 }
 
 .site-nav a:hover {
   text-decoration: underline;
-}
-
-/* Section Headings */
-h2 {
-  font-size: 1.1rem;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.5rem;
-  margin-top: rem;
-  margin-bottom: 1rem;
-  text-align: left;
 }
 
 /* Featured Article */
@@ -83,19 +143,25 @@ h2 {
   gap: 1.5rem;
 }
 
+.article-card h2 {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
 /* Footer */
 .site-footer {
-  background-color: #1f1f1f;
-  color: white;
+  background-color: #cacaca;
+  color: rgb(0, 0, 0);
   text-align: center;
   padding: 2rem 1rem;
   font-size: 0.9rem;
   border-top: 1px solid #222;
-  border-radius: 12px 12px 12px 12px; /* top-rounded only */
+  border-radius: 12px;
 }
 
 .footer-links a {
-  color: white;
+  color: #174eb6;
   margin: 0 1rem;
   text-decoration: none;
 }
