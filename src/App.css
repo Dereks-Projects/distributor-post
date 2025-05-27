@@ -15,24 +15,24 @@ body {
 
 /* Header */
 .site-header {
-  background-color: #4b4b4b;
-  color: #fafafa;
+  background-color: transparent;
+  color: #000;
   text-align: center;
   padding: 2rem 1rem;
-  border-radius: 12px 12px 12px 12px; /* bottom-rounded only */
+  border-bottom: 1px solid #ccc;
 }
 
 .site-title {
   margin: 0;
-  font-size: 3.5rem;
-  color: #fafafa;
+  font-size: 2.5rem;
+  color: #000;
 }
 
 .site-subtitle {
   margin: 0.5rem 0 0;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 400;
-  color: white
+  color: rgb(37, 37, 37)
 }
 
 /* Navigation */
@@ -85,7 +85,7 @@ h2 {
 
 /* Footer */
 .site-footer {
-  background-color: #4b4b4b;
+  background-color: #1f1f1f;
   color: white;
   text-align: center;
   padding: 2rem 1rem;

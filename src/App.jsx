@@ -9,6 +9,21 @@ function App() {
   const [substackArticles, setSubstackArticles] = useState([]);
   const [educationArticles, setEducationArticles] = useState([]);
 
+  // Helper to decode HTML entities
+  function decodeHtmlEntities(text) {
+    const textarea = document.createElement("textarea");
+    textarea.innerHTML = text;
+    return textarea.value;
+  }
+
+  // Helper to extract first <img> src from HTML
+  function extractImageFromDescription(html) {
+    const div = document.createElement("div");
+    div.innerHTML = html;
+    const img = div.querySelector("img");
+    return img?.src || null;
+  }
+
   useEffect(() => {
     const stored = localStorage.getItem("gnews-articles");
     const lastFetch = localStorage.getItem("gnews-lastFetch");
@@ -51,7 +66,7 @@ function App() {
           title: decodeHtmlEntities(item.title),
           description: decodeHtmlEntities(item.description),
           url: item.link,
-          image: item.thumbnail || 'https://via.placeholder.com/600x300.png?text=VinePair',
+          image: item.thumbnail || 'https://placehold.co/600x300?text=VinePair',
           source: { name: 'VinePair' },
           publishedAt: item.pubDate,
         }));
@@ -60,7 +75,7 @@ function App() {
           title: decodeHtmlEntities(item.title),
           description: decodeHtmlEntities(item.description),
           url: item.link,
-          image: item.thumbnail || 'https://via.placeholder.com/600x300.png?text=Beverage+Daily',
+          image: item.thumbnail || 'https://placehold.co/600x300?text=BeverageDaily',
           source: { name: 'BeverageDaily' },
           publishedAt: item.pubDate,
         }));
@@ -82,14 +97,17 @@ function App() {
         );
         const data = await response.json();
         if (Array.isArray(data.items)) {
-          const simplified = data.items.map(item => ({
-            title: decodeHtmlEntities(item.title),
-            description: item.description,
-            url: item.link,
-            image: item.thumbnail || 'https://via.placeholder.com/600x300.png?text=Distributor+Post',
-            source: { name: 'Distributor Post' },
-            publishedAt: item.pubDate,
-          }));
+          const simplified = data.items.map(item => {
+            const fallbackImg = extractImageFromDescription(item.description);
+            return {
+              title: decodeHtmlEntities(item.title),
+              description: item.description,
+              url: item.link,
+              image: item.thumbnail || fallbackImg || null,
+              source: { name: 'Distributor Post' },
+              publishedAt: item.pubDate,
+            };
+          });
           setSubstackArticles(simplified.slice(0, 4));
         }
       } catch (error) {
@@ -111,7 +129,7 @@ function App() {
             title: decodeHtmlEntities(item.title),
             description: item.description,
             url: item.link,
-            image: item.thumbnail || 'https://via.placeholder.com/600x300.png?text=Education',
+            image: item.thumbnail || 'https://placehold.co/600x300?text=Education',
             source: { name: 'Derek Engles (Substack)' },
             publishedAt: item.pubDate,
           }));
@@ -123,12 +141,6 @@ function App() {
     };
     fetchEducation();
   }, []);
-
-  function decodeHtmlEntities(text) {
-    const textarea = document.createElement("textarea");
-    textarea.innerHTML = text;
-    return textarea.value;
-  }
 
   const renderSection = (id, title, data) => (
     <section>
