@@ -16,6 +16,13 @@ function App() {
     setMenuOpen(!menuOpen);
   };
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   function decodeHtmlEntities(text) {
     const textarea = document.createElement("textarea");
     textarea.innerHTML = text;
@@ -154,7 +161,6 @@ function App() {
 
   return (
     <>
-      {/* Mobile Header moved OUTSIDE app-container */}
       <header className="mobile-header">
         <span className="hamburger hide-on-desktop" onClick={toggleMenu}>☰</span>
         <span className="mobile-title">Distributor Post</span>
@@ -175,23 +181,24 @@ function App() {
 
       {menuOpen && (
         <nav className="mobile-nav">
-          <a href="#original">Industry Analysis</a>
-          <a href="#trending">Trending Headlines</a>
-          <a href="#industry">Industry Sources</a>
-          <a href="#education">Beverage Education</a>
+          <a onClick={() => scrollToSection('original')}>Industry Analysis</a>
+          <a onClick={() => scrollToSection('trending')}>Trending Headlines</a>
+          <a onClick={() => scrollToSection('industry')}>Industry Sources</a>
+          <a onClick={() => scrollToSection('education')}>Beverage Education</a>
         </nav>
       )}
 
       <div className="app-container">
         <header className="site-header">
+          
           <p className="site-subtitle">The #1 Resource for Beverage Industry Professionals</p>
         </header>
 
         <nav className="site-nav">
-          <a href="#original">Industry Analysis</a>
-          <a href="#trending">Trending Headlines</a>
-          <a href="#industry">Industry Sources</a>
-          <a href="#education">Beverage Education</a>
+          <a onClick={() => scrollToSection('original')}>Industry Analysis</a>
+          <a onClick={() => scrollToSection('trending')}>Trending Headlines</a>
+          <a onClick={() => scrollToSection('industry')}>Industry Sources</a>
+          <a onClick={() => scrollToSection('education')}>Beverage Education</a>
         </nav>
 
         {renderSection("original", "In Depth Analysis", substackArticles)}
