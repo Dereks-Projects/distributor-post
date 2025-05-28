@@ -9,6 +9,8 @@ function App() {
   const [substackArticles, setSubstackArticles] = useState([]);
   const [educationArticles, setEducationArticles] = useState([]);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -156,31 +158,40 @@ function App() {
       <header className="mobile-header">
         <span className="hamburger hide-on-desktop" onClick={toggleMenu}>☰</span>
         <span className="mobile-title">Distributor Post</span>
-        <span className="search-icon">🔍</span>
+        <span className="search-icon" onClick={() => setSearchOpen(prev => !prev)}>🔍</span>
       </header>
+
+      {searchOpen && (
+        <div className="search-container">
+          <input
+            type="text"
+            placeholder="Search articles..."
+            className="search-input"
+            value={searchQuery}
+            onChange={e => setSearchQuery(e.target.value)}
+          />
+        </div>
+      )}
 
       {menuOpen && (
         <nav className="mobile-nav">
           <a href="#original">Industry Analysis</a>
           <a href="#trending">Trending Headlines</a>
           <a href="#industry">Industry Sources</a>
-          <a href="#education">Wine Education</a>
+          <a href="#education">Beverage Education</a>
         </nav>
       )}
 
       <div className="app-container">
-        {/* Main Header */}
         <header className="site-header">
-          
           <p className="site-subtitle">The #1 Resource for Beverage Industry Professionals</p>
         </header>
 
-        {/* Desktop Nav */}
         <nav className="site-nav">
           <a href="#original">Industry Analysis</a>
           <a href="#trending">Trending Headlines</a>
           <a href="#industry">Industry Sources</a>
-          <a href="#education">Wine Education</a>
+          <a href="#education">Beverage Education</a>
         </nav>
 
         {renderSection("original", "In Depth Analysis", substackArticles)}
@@ -188,7 +199,7 @@ function App() {
         {renderSection("industry", "From Industry Sources", vinepairArticles)}
 
         <section>
-          <h2 id="education">Wine Education</h2>
+          <h2 id="education">Beverage Education</h2>
           {educationArticles.length > 0 && (
             <>
               <div className="featured-container">
@@ -207,7 +218,6 @@ function App() {
         </section>
       </div>
 
-      {/* Footer remains OUTSIDE app-container */}
       <footer className="site-footer">
         <p className="footer-tagline">Insight for Beverage Professionals</p>
         <p>&copy; {new Date().getFullYear()} Distributor Post. All rights reserved.</p>
