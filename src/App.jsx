@@ -151,13 +151,14 @@ function App() {
   );
 
   return (
-    <div className="app-container">
-      {/* Mobile Header */}
+    <>
+      {/* Mobile Header moved OUTSIDE app-container */}
       <header className="mobile-header">
-        <span className="hamburger" onClick={toggleMenu}>☰</span>
+        <span className="hamburger hide-on-desktop" onClick={toggleMenu}>☰</span>
         <span className="mobile-title">Distributor Post</span>
         <span className="search-icon">🔍</span>
       </header>
+
       {menuOpen && (
         <nav className="mobile-nav">
           <a href="#original">Industry Analysis</a>
@@ -167,43 +168,46 @@ function App() {
         </nav>
       )}
 
-      {/* Main Header */}
-      <header className="site-header">
-        <h1 className="site-title">Distributor Post</h1>
-        <p className="site-subtitle">The #1 resource for beverage industry professionals.</p>
-      </header>
+      <div className="app-container">
+        {/* Main Header */}
+        <header className="site-header">
+          
+          <p className="site-subtitle">The #1 Resource for Beverage Industry Professionals</p>
+        </header>
 
-      {/* Desktop Nav */}
-      <nav className="site-nav">
-        <a href="#original">Industry Analysis</a>
-        <a href="#trending">Trending Headlines</a>
-        <a href="#industry">Industry Sources</a>
-        <a href="#education">Wine Education</a>
-      </nav>
+        {/* Desktop Nav */}
+        <nav className="site-nav">
+          <a href="#original">Industry Analysis</a>
+          <a href="#trending">Trending Headlines</a>
+          <a href="#industry">Industry Sources</a>
+          <a href="#education">Wine Education</a>
+        </nav>
 
-      {renderSection("original", "In Depth Analysis", substackArticles)}
-      {renderSection("trending", "Trending Headlines", articles)}
-      {renderSection("industry", "From Industry Sources", vinepairArticles)}
+        {renderSection("original", "In Depth Analysis", substackArticles)}
+        {renderSection("trending", "Trending Headlines", articles)}
+        {renderSection("industry", "From Industry Sources", vinepairArticles)}
 
-      <section>
-        <h2 id="education">Wine Education</h2>
-        {educationArticles.length > 0 && (
-          <>
-            <div className="featured-container">
-              <ArticleCard {...educationArticles[0]} />
-            </div>
-            <div className="article-grid">
-              {educationArticles.slice(1, 4).map((article, index) => (
-                <ArticleCard key={`education-${index}`} {...article} />
-              ))}
-            </div>
-          </>
-        )}
-        <div className="quiz-wrapper">
-          <WineQuiz />
-        </div>
-      </section>
+        <section>
+          <h2 id="education">Wine Education</h2>
+          {educationArticles.length > 0 && (
+            <>
+              <div className="featured-container">
+                <ArticleCard {...educationArticles[0]} />
+              </div>
+              <div className="article-grid">
+                {educationArticles.slice(1, 4).map((article, index) => (
+                  <ArticleCard key={`education-${index}`} {...article} />
+                ))}
+              </div>
+            </>
+          )}
+          <div className="quiz-wrapper">
+            <WineQuiz />
+          </div>
+        </section>
+      </div>
 
+      {/* Footer remains OUTSIDE app-container */}
       <footer className="site-footer">
         <p className="footer-tagline">Insight for Beverage Professionals</p>
         <p>&copy; {new Date().getFullYear()} Distributor Post. All rights reserved.</p>
@@ -213,7 +217,7 @@ function App() {
           <a href="https://www.somm.site" target="_blank" rel="noopener noreferrer">Learn More</a>
         </div>
       </footer>
-    </div>
+    </>
   );
 }
 
