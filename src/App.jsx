@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import ArticleCard from './components/ArticleCard';
 import './App.css';
 import WineQuiz from './components/WineQuiz';
+import logoIcon from './assets/logo-icon.svg';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -12,15 +13,11 @@ function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
   };
 
   function decodeHtmlEntities(text) {
@@ -70,7 +67,6 @@ function App() {
       try {
         const vinepair = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://vinepair.com/feed/');
         const vineData = await vinepair.json();
-
         const vineItems = (vineData.items || []).slice(0, 4).map(item => ({
           title: decodeHtmlEntities(item.title),
           description: decodeHtmlEntities(item.description),
@@ -79,7 +75,6 @@ function App() {
           source: { name: 'VinePair' },
           publishedAt: item.pubDate,
         }));
-
         setVinepairArticles(vineItems);
       } catch (error) {
         console.error('Error fetching RSS feed:', error);
@@ -91,9 +86,7 @@ function App() {
   useEffect(() => {
     const fetchSubstack = async () => {
       try {
-        const response = await fetch(
-          'https://api.rss2json.com/v1/api.json?rss_url=https://distributorpost.substack.com/feed'
-        );
+        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://distributorpost.substack.com/feed');
         const data = await response.json();
         if (Array.isArray(data.items)) {
           const simplified = data.items.map(item => {
@@ -119,9 +112,7 @@ function App() {
   useEffect(() => {
     const fetchEducation = async () => {
       try {
-        const response = await fetch(
-          'https://api.rss2json.com/v1/api.json?rss_url=https://derekengles.substack.com/feed'
-        );
+        const response = await fetch('https://api.rss2json.com/v1/api.json?rss_url=https://derekengles.substack.com/feed');
         const data = await response.json();
         if (Array.isArray(data.items)) {
           const simplified = data.items.map(item => ({
@@ -162,8 +153,14 @@ function App() {
   return (
     <>
       <header className="mobile-header">
+        <img
+          src={logoIcon}
+          alt="Distributor Post Logo"
+          className="desktop-icon hide-on-mobile"
+        />
         <span className="hamburger hide-on-desktop" onClick={toggleMenu}>☰</span>
-        <span className="mobile-title">Distributor Post</span>
+        <span className="mobile-title hide-on-desktop">Distributor Post</span>
+        <span className="desktop-title hide-on-mobile">Distributor Post</span>
         <span className="search-icon" onClick={() => setSearchOpen(prev => !prev)}>🔍</span>
       </header>
 
@@ -190,7 +187,6 @@ function App() {
 
       <div className="app-container">
         <header className="site-header">
-          
           <p className="site-subtitle">The #1 Resource for Beverage Industry Professionals</p>
         </header>
 
@@ -226,6 +222,7 @@ function App() {
       </div>
 
       <footer className="site-footer">
+        <img src="/footer-logo.png" alt="Footer Logo" className="footer-logo" />
         <p className="footer-tagline">Insight for Beverage Professionals</p>
         <p>&copy; {new Date().getFullYear()} Distributor Post. All rights reserved.</p>
         <div className="footer-links">

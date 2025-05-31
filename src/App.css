@@ -161,6 +161,10 @@ button:focus-visible {
     width: 100%;
     max-width: 90%;
   }
+
+  .hide-on-mobile {
+    display: none !important;
+  }
 }
 
 /* ----- MOBILE HEADER BAR ----- */
@@ -234,6 +238,13 @@ button:focus-visible {
 @media (min-width: 769px) {
   .hide-on-desktop {
     display: none;
+  }
+
+  .desktop-icon {
+    display: inline;
+    height: 42px;
+    margin-right: 1rem;
+    vertical-align: middle;
   }
 }
 
@@ -309,11 +320,11 @@ button:focus-visible {
   width: 100%;
   margin: 0;
   padding: 2rem 1rem;
-  background-color: #cacaca;
+  background-color: #e0e0e0;
   color: rgb(0, 0, 0);
   text-align: center;
   font-size: 0.9rem;
-  border-top: 1px solid #222;
+  border-top: 1px solid #8b8b8b;
   border-radius: 0;
   box-sizing: border-box;
 }
@@ -331,4 +342,54 @@ button:focus-visible {
 .footer-tagline {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
+}
+
+.footer-logo {
+  max-width: 160px;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem; /* centers the image and adds space below */
+}
+
+
+/* DESKTOP-ONLY TITLE STYLING */
+@media (min-width: 769px) {
+  .site-title {
+    font-size: 3rem; /* Adjust size here */
+    font-weight: 800;
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+  }
+}
+
+/* ------------------------- */
+/* TRUE DESKTOP TITLE STYLING */
+@media (min-width: 769px) {
+  header.site-header .site-title {
+    font-size: 3rem; /* Increase this for larger font */
+    font-weight: 800;
+    margin: 2rem 0 1rem;
+    text-align: center;
+  }
+}
+
+/* ----- SEPARATE TITLE STYLES FOR HEADER ----- */
+@media (max-width: 768px) {
+  .mobile-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    flex-grow: 1;
+    text-align: center;
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-title {
+    font-size: 2.5rem; /* adjust this for desktop title size */
+    font-weight: 800;
+    flex-grow: 1;
+    text-align: center;
+    display: block;
+  }
 }
