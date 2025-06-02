@@ -227,7 +227,7 @@ function App() {
         <p>&copy; {new Date().getFullYear()} Distributor Post. All rights reserved.</p>
         <div className="footer-links">
           <a href="https://www.linkedin.com/company/distributorpost" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="mailto:derek@somm.site">Contact Us</a>
+          <a href="mailto:derekengles@gmail.com">Contact Me</a>
           <a href="https://www.somm.site" target="_blank" rel="noopener noreferrer">Learn More</a>
         </div>
       </footer>

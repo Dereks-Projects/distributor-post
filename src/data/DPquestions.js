@@ -5537,204 +5537,192 @@ const DPquestions = [
     ],
     answer: "South Island NZ"
   },
+
+[
   {
-    level: "hard",
-    question: "Where is the Southern Alps and Lake Wanaka most influencial?",
-    choices: [
-      "North Island NZ",
-      "South Island NZ",
-      "Western Australia",
-      "South Australia"
-    ],
-    answer: "South Island NZ"
+    "level": "easy",
+    "question": "What type of alcohol is commonly made from potatoes or grains?",
+    "choices": ["Whiskey", "Vodka", "Rum", "Tequila"],
+    "answer": "Vodka"
   },
   {
-    level: "hard",
-    question: "Where is Vale dos Vinhedos?",
-    choices: [
-      "Uruguay",
-      "Brazil",
-      "Argentina",
-      "Chile"
-    ],
-    answer: "Brazil"
+    "level": "easy",
+    "question": "Which spirit is traditionally used in a Mojito cocktail?",
+    "choices": ["Vodka", "Gin", "Rum", "Whiskey"],
+    "answer": "Rum"
   },
   {
-    level: "hard",
-    question: "What is the synonym for Tannat in Uruguay?",
-    choices: [
-      "Criolla",
-      "Harriague",
-      "Pinotage",
-      "Breton"
-    ],
-    answer: "Harriague"
+    "level": "easy",
+    "question": "Which country is best known for producing sake?",
+    "choices": ["China", "Japan", "Thailand", "South Korea"],
+    "answer": "Japan"
   },
   {
-    level: "hard",
-    question: "Where is the Cephalonia wine region?",
-    choices: [
-      "Greece",
-      "Hungary",
-      "Romania",
-      "Bulgaria"
-    ],
-    answer: "Greece"
+    "level": "easy",
+    "question": "Which of these is a type of beer?",
+    "choices": ["Merlot", "Chardonnay", "IPA", "Rosé"],
+    "answer": "IPA"
   },
   {
-    level: "hard",
-    question: "Where is the Sterea Ellada wine region?",
-    choices: [
-      "Greece",
-      "Hungary",
-      "Romania",
-      "Bulgaria"
-    ],
-    answer: "Greece"
+    "level": "easy",
+    "question": "What is the main ingredient in gin?",
+    "choices": ["Juniper berries", "Barley", "Sugarcane", "Corn"],
+    "answer": "Juniper berries"
   },
   {
-    level: "hard",
-    question: "Where is the Samos wine region?",
-    choices: [
-      "Greece",
-      "Hungary",
-      "Romania",
-      "Bulgaria"
-    ],
-    answer: "Greece"
+    "level": "easy",
+    "question": "Which spirit is made primarily from sugarcane or molasses?",
+    "choices": ["Gin", "Rum", "Whiskey", "Vodka"],
+    "answer": "Rum"
   },
   {
-    level: "hard",
-    question: "Where would you find the Szarvas and M\u00e9zes M\u00e1ly vineyards?",
-    choices: [
-      "Balanton",
-      "Tokaj",
-      "Sopron",
-      "Kunsag"
-    ],
-    answer: "Tokaj"
+    "level": "easy",
+    "question": "Which of these drinks is typically served as a shot with salt and lime?",
+    "choices": ["Whiskey", "Vodka", "Tequila", "Sake"],
+    "answer": "Tequila"
   },
   {
-    level: "hard",
-    question: "What is a g\u00f6nc?",
-    choices: [
-      "a wine barrel in Argentina",
-      "a yeast strain in Hungary",
-      "a wine barrel in Tokaj",
-      "a glass bottle in Slovenia"
-    ],
-    answer: "a wine barrel in Tokaj"
+    "level": "easy",
+    "question": "Which type of beer is usually light in color and body?",
+    "choices": ["Stout", "Lager", "Porter", "IPA"],
+    "answer": "Lager"
   },
   {
-    level: "hard",
-    question: "Where is Kir\u00e1lyudvar from?",
-    choices: [
-      "Greece",
-      "Hungary",
-      "Romania",
-      "Bulgaria"
-    ],
-    answer: "Hungary"
+    "level": "easy",
+    "question": "What kind of alcohol is Baileys Irish Cream?",
+    "choices": ["Liqueur", "Vodka", "Tequila", "Gin"],
+    "answer": "Liqueur"
   },
   {
-    level: "hard",
-    question: "Where is Santo Tom\u00e1s?",
-    choices: [
-      "Uruguay",
-      "Mexico",
-      "Argentina",
-      "Chile"
-    ],
-    answer: "Mexico"
+    "level": "easy",
+    "question": "Which beverage is made from fermented barley and aged in barrels?",
+    "choices": ["Vodka", "Rum", "Whiskey", "Sake"],
+    "answer": "Whiskey"
+  },
+
+  {
+    "level": "medium",
+    "question": "What is the style of beer produced in Belgium by monks?",
+    "choices": ["IPA", "Lager", "Galliano", "Trappist"],
+    "answer": "Trappist"
   },
   {
-    level: "hard",
-    question: "Where is Polish Hill?",
-    choices: [
-      "Barossa Valley",
-      "Clare Valley",
-      "Yarra Valley",
-      "Tasmania"
-    ],
-    answer: "Clare Valley"
+    "level": "medium",
+    "question": "Which country is known for producing Shochu?",
+    "choices": ["China", "South Korea", "Japan", "Thailand"],
+    "answer": "Japan"
   },
   {
-    level: "hard",
-    question: "Which is not a lieu-dits of Cornas?",
-    choices: [
-      "Les Reynards",
-      "La C\u00f4te",
-      "Les Clos",
-      "Les Mazards"
-    ],
-    answer: "Les Clos"
+    "level": "medium",
+    "question": "Which herbal spirit is known for its high alcohol content and controversial history?",
+    "choices": ["Absinthe", "Campari", "Amaro", "Sambuca"],
+    "answer": "Absinthe"
   },
   {
-    level: "hard",
-    question: "Where is the Buzet wine region?",
-    choices: [
-      "Provence",
-      "Languedoc",
-      "Rousillon",
-      "SW France"
-    ],
-    answer: "SW France"
+    "level": "medium",
+    "question": "Which of the following is a peated whisky primarily associated with Scotland?",
+    "choices": ["Bourbon", "Rye", "Islay Scotch", "Tennessee Whiskey"],
+    "answer": "Islay Scotch"
   },
   {
-    level: "hard",
-    question: "What style of wine is produced in Carmignano?",
-    choices: [
-      "Dry Red",
-      "Dry White",
-      "Sweet White",
-      "All of these"
-    ],
-    answer: "Dry Red"
+    "level": "medium",
+    "question": "Which spirit is used in a traditional Moscow Mule?",
+    "choices": ["Gin", "Whiskey", "Vodka", "Rum"],
+    "answer": "Vodka"
   },
   {
-    level: "hard",
-    question: "What style of wine is produced in Vernaccia di San Gimignano?",
-    choices: [
-      "Dry Red",
-      "Dry White",
-      "Sweet White",
-      "All of these"
-    ],
-    answer: "Dry White"
+    "level": "medium",
+    "question": "Which liqueur is orange-flavored and used in cocktails like the Margarita?",
+    "choices": ["Amaretto", "Frangelico", "Triple Sec", "Kahlua"],
+    "answer": "Triple Sec"
   },
   {
-    level: "hard",
-    question: "Where would you find Neyret-Gachet on the wine label?",
-    choices: [
-      "Ch\u00e2teau Chalon",
-      "Ch\u00e2teau-Grillet",
-      "Ch\u00e2teau Couhins",
-      "Ch\u00e2teau Charmes"
-    ],
-    answer: "Ch\u00e2teau-Grillet"
+    "level": "medium",
+    "question": "Which type of beer is known for its sour and fruity flavors?",
+    "choices": ["Lager", "Lambic", "Pilsner", "Bock"],
+    "answer": "Lambic"
   },
   {
-    level: "hard",
-    question: "Where is the Grosser Ring?",
-    choices: [
-      "Rheingau",
-      "Mosel",
-      "Rhenhessen",
-      "Nahe"
-    ],
-    answer: "Mosel"
+    "level": "medium",
+    "question": "Which Caribbean island is famous for spiced rum production?",
+    "choices": ["Cuba", "Jamaica", "Barbados", "Puerto Rico"],
+    "answer": "Jamaica"
   },
   {
-    level: "hard",
-    question: "Where is the Zempl\u00e9n wine region?",
-    choices: [
-      "Greece",
-      "Hungary",
-      "Germany",
-      "France"
-    ],
-    answer: "Hungary"
+    "level": "medium",
+    "question": "What grain is traditionally used in the production of bourbon?",
+    "choices": ["Wheat", "Rye", "Corn", "Barley"],
+    "answer": "Corn"
+  },
+  {
+    "level": "medium",
+    "question": "What is the dominant flavor of the Italian liqueur Amaretto?",
+    "choices": ["Orange", "Mint", "Almond", "Licorice"],
+    "answer": "Almond"
+  },
+
+  {
+    "level": "hard",
+    "question": "Which region in Scotland is known for producing the smokiest single malt whiskies?",
+    "choices": ["Highlands", "Speyside", "Islay", "Lowlands"],
+    "answer": "Islay"
+  },
+  {
+    "level": "hard",
+    "question": "Which ingredient in gin is legally required to be predominant by flavor?",
+    "choices": ["Coriander", "Lemon peel", "Juniper", "Angelica root"],
+    "answer": "Juniper"
+  },
+  {
+    "level": "hard",
+    "question": "What is the Japanese distilled spirit that can be made from sweet potatoes, barley, or rice?",
+    "choices": ["Sake", "Shochu", "Soju", "Awamori"],
+    "answer": "Shochu"
+  },
+  {
+    "level": "hard",
+    "question": "In beer production, what is the purpose of adding hops?",
+    "choices": ["Sweetness", "Color", "Bitterness and aroma", "Fermentation"],
+    "answer": "Bitterness and aroma"
+  },
+  {
+    "level": "hard",
+    "question": "Which brand of herbal liqueur is made with 56 different herbs and spices?",
+    "choices": ["Campari", "Bénédictine", "Jägermeister", "Fernet-Branca"],
+    "answer": "Jägermeister"
+  },
+  {
+    "level": "hard",
+    "question": "Which country produces the majority of the world's tequila?",
+    "choices": ["USA", "Mexico", "Spain", "Brazil"],
+    "answer": "Mexico"
+  },
+  {
+    "level": "hard",
+    "question": "What is the main ingredient of baijiu, a traditional Chinese spirit?",
+    "choices": ["Corn", "Rice", "Sorghum", "Barley"],
+    "answer": "Sorghum"
+  },
+  {
+    "level": "hard",
+    "question": "Which beer style is characterized by spontaneous fermentation using wild yeast?",
+    "choices": ["IPA", "Stout", "Lambic", "Pilsner"],
+    "answer": "Lambic"
+  },
+  {
+    "level": "hard",
+    "question": "What aging process must occur for a spirit to be labeled 'reposado' tequila?",
+    "choices": ["Minimum 2 months in oak barrels", "Distilled twice", "Aged in clay pots", "Flavored with agave"],
+    "answer": "Minimum 2 months in oak barrels"
+  },
+  {
+    "level": "hard",
+    "question": "What does 'ABV' stand for in the context of alcoholic beverages?",
+    "choices": ["Alcohol Before Volume", "Alcohol By Volume", "Average Beverage Volume", "Alcohol Balance Value"],
+    "answer": "Alcohol By Volume"
   }
+]
+
 ]
 ]
 

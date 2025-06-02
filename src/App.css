@@ -316,6 +316,9 @@ button:focus-visible {
 }
 
 /* ----- FOOTER ----- */
+
+
+
 .site-footer {
   width: 100%;
   margin: 0;
@@ -330,22 +333,25 @@ button:focus-visible {
 }
 
 .footer-links a {
-  color: #174eb6;
+  color: #272727;
   margin: 0 1rem;
   text-decoration: none;
 }
 
 .footer-links a:hover {
   text-decoration: underline;
+  color: #4e4e4e
 }
 
 .footer-tagline {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  font-size: bold;
 }
 
 .footer-logo {
-  max-width: 160px;
+  max-width: 100px;
+  max-height: 100px;
   height: auto;
   display: block;
   margin: 0 auto 1rem; /* centers the image and adds space below */

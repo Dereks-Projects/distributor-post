@@ -113,7 +113,7 @@ function WineQuiz() {
       {!showQuiz && score >= 0 && filteredQuestions.length > 0 && (
         <>
           <h4>Score: {score} / {filteredQuestions.length}</h4>
-          <button onClick={handleRestart}>Restart Quiz</button>
+          <button onClick={handleRestart}>Reset Quiz</button>
 
           {wrongAnswers.length > 0 && (
             <div style={{ marginTop: '2rem' }}>
